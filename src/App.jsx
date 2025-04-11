@@ -15,6 +15,8 @@ import { galleryArr } from './components/Main/Ship-gallery/galleryArr.js';
 
 export const App = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  // modal 
+  const [modalVisible, setModalVisible] = useState(false);
   const handleSlideChange = (newIndex) => {
     setCurrentIndex(newIndex);
   };
@@ -40,7 +42,7 @@ export const App = () => {
         </Container>
       </Wrapper>
       <Container>
-        <GalleryHeader />
+        <GalleryHeader modalVisible={modalVisible} setModalVisible={setModalVisible} />
         <GalleryCard cardArray={galleryArr} />
       </Container>
     </>
