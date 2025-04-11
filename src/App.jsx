@@ -5,10 +5,13 @@ import About from './components/Main/About/About';
 import Slider from './components/Main/Slider/Slider';
 import News from './components/Main/News/News.jsx';
 import { Container } from './Container';
-import  Wrapper from './components/Main/History/Wrapper.jsx';
-import  Company  from './components/Main/History/Company.jsx';
+import Wrapper from './components/Main/History/Wrapper.jsx';
+import GalleryHeader from './components/Main/Ship-gallery/GalleryHeader.jsx';
+import Company from './components/Main/History/Company.jsx';
 import { historyShip } from './components/Main/History/history.js';
 import { useState } from 'react';
+import GalleryCard from './components/Main/Ship-gallery/GalleryCard.jsx';
+import { galleryArr } from './components/Main/Ship-gallery/galleryArr.js';
 
 export const App = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -36,6 +39,10 @@ export const App = () => {
           <Company history={historyShip} />
         </Container>
       </Wrapper>
+      <Container>
+        <GalleryHeader />
+        <GalleryCard cardArray={galleryArr} />
+      </Container>
     </>
   );
 };
