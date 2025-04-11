@@ -1,0 +1,56 @@
+@charset "UTF-8";
+@import "../fonts/stylesheet.css";
+/* base.scss */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "HelveticaNeueCyr";
+  font-size: 1.6rem;
+}
+
+/* Применение шрифта ко всем элементам формы */
+input,
+textarea,
+select,
+button {
+  font-family: "HelveticaNeueCyr";
+  outline: none;
+  border: none;
+}
+
+textarea {
+  resize: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  display: block;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  a:hover {
+    color: inherit; /* или отменяем эффект */
+  }
+}
+/* reset.scss */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "HelveticaNeueCyr";
+}

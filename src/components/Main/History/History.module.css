@@ -1,0 +1,267 @@
+@charset "UTF-8";
+/* base.scss */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "HelveticaNeueCyr";
+  font-size: 1.6rem;
+}
+
+/* Применение шрифта ко всем элементам формы */
+input,
+textarea,
+select,
+button {
+  font-family: "HelveticaNeueCyr";
+  outline: none;
+  border: none;
+}
+
+textarea {
+  resize: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  display: block;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  a:hover {
+    color: inherit; /* или отменяем эффект */
+  }
+}
+.wrapper {
+  min-height: 79.8rem;
+  padding: 12rem 0 5rem 0;
+  background-color: #133d8d;
+}
+
+.company {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 12rem;
+       column-gap: 12rem;
+  flex-wrap: wrap;
+}
+.company__history h2 {
+  color: #fff;
+  font-size: 3.6rem;
+  margin-bottom: 2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.company__info h3 {
+  color: #fff;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+.company__info p {
+  max-width: 52.6rem;
+  color: #fff;
+  font-size: 1.4rem;
+  line-height: 3rem;
+  height: 50rem;
+  overflow: hidden;
+  text-align: justify;
+}
+.company__wrap {
+  display: flex;
+  flex-direction: column;
+}
+.company__images {
+  position: relative;
+  max-width: 100%;
+  margin-bottom: 7rem;
+}
+.company__images button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border: 0.2rem solid transparent;
+  cursor: pointer;
+}
+.company__images button span {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  background-color: #fff;
+}
+.company__images button::after {
+  position: absolute;
+  font-size: 2.4rem;
+  color: #fff;
+}
+.company__images .btn1 {
+  position: absolute;
+  bottom: -16px;
+  left: -14px;
+}
+.company__images .btn1::after {
+  content: "2021";
+  left: 4rem;
+  top: 0rem;
+}
+.company__images .btn2 {
+  position: absolute;
+  bottom: 82px;
+  left: 113px;
+}
+.company__images .btn2::after {
+  content: "2022";
+  left: -1.5rem;
+  top: -4rem;
+}
+.company__images .btn3 {
+  position: absolute;
+  bottom: 112px;
+  left: 280px;
+}
+.company__images .btn3::after {
+  content: "2023";
+  left: -1rem;
+  top: 4rem;
+}
+.company__images .btn4 {
+  position: absolute;
+  bottom: 229px;
+  left: 332px;
+}
+.company__images .btn4::after {
+  content: "2024";
+  left: -6rem;
+  top: 0.5rem;
+}
+.company__images .btn5 {
+  position: absolute;
+  bottom: 274px;
+  left: 464px;
+}
+.company__images .btn5::after {
+  content: "2025";
+  left: -1rem;
+  top: 3.5rem;
+}
+.company__images .btn6 {
+  position: absolute;
+  top: -19px;
+  right: -13px;
+}
+.company__images .btn6::after {
+  content: "2026";
+  left: -7rem;
+  top: 0rem;
+}
+.company__images .not-active {
+  background-color: #fff;
+}
+.company__images .not-active span {
+  display: block;
+  background-color: #133d8d;
+}
+.company__images .active {
+  background-color: #bd0007;
+  border-color: #fff;
+}
+
+.info__block {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+  margin-bottom: 2rem;
+}
+.info__block input {
+  width: 2rem;
+  height: 2rem;
+}
+.info__block label {
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+@media (width < 1278px) {
+  .company {
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 2rem;
+  }
+}
+@media (width < 740px) {
+  .company__info {
+    width: 100%;
+  }
+  .company__info p {
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+  .company__history h2 {
+    font-size: 2.5rem;
+  }
+  .company__images {
+    width: 37rem;
+  }
+  .company__images img {
+    width: 37rem;
+  }
+  .company__images button {
+    width: 2rem;
+    height: 2rem;
+  }
+  .company__images button span {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+  .company__images button::after {
+    position: absolute;
+    font-size: 2rem;
+  }
+  .company__images .btn1 {
+    bottom: -11px;
+    left: -7px;
+  }
+  .company__images .btn2 {
+    bottom: 55px;
+    left: 99px;
+  }
+  .company__images .btn3 {
+    bottom: 96px;
+    left: 192px;
+  }
+  .company__images .btn4 {
+    bottom: 166px;
+    left: 243px;
+  }
+  .company__images .btn5 {
+    top: 38px;
+    left: 323px;
+  }
+  .company__images .btn6 {
+    top: -14px;
+    right: -7px;
+  }
+  .company .wrapper {
+    padding: 5rem 0;
+  }
+  .company .active {
+    border: 0.1rem solid #fff;
+  }
+}

@@ -1,0 +1,134 @@
+@use '../../../assets/styles/variables' as *;
+@use '../../../assets/styles/mixin' as *;
+
+.about {
+  @include flex-box;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: end;
+  &__info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+    margin-bottom: 13rem;
+    h1 {
+      font-weight: 300;
+      max-width: 63.5rem;
+      font-size: 6rem;
+      line-height: 140%;
+      color: $color-white;
+    }
+    p {
+      position: relative;
+      max-width: 40rem;
+      font-size: $fz14px;
+      color: $color-white;
+      font-weight: 500;
+      line-height: 2rem;
+      padding-left: 3rem;
+      margin-bottom: 3rem;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0.3rem;
+        height: 100%;
+        background-color: $color-white;
+        border-radius: 0.5rem;
+      }
+    }
+  }
+  &__btn {
+    display: inline-block;
+    padding: 1.5rem 3rem;
+    background-color: $button-color;
+    color: $color-white;
+    font-weight: 500;
+    font-size: $fz16px;
+    text-transform: uppercase;
+    max-width: 17rem;
+    &:hover {
+      background-color: $color-blue;
+      color: $color-white;
+    }
+  }
+  &__card {
+    max-width: 52.5rem;
+  }
+}
+
+.card-flex {
+  min-height: 23.5rem;
+  padding: 3rem 3.5rem;
+  background: rgba(65, 87, 129, 0.4);
+  h2 {
+    text-transform: uppercase;
+    color: $color-white;
+    font-size: $fz14px;
+    margin-bottom: 2.5rem;
+  }
+}
+.card-flex_block {
+  @include flex-box;
+  justify-content: space-between;
+}
+.block {
+  color: $color-white;
+  display: flex;
+  column-gap: 1.5rem;
+  p,
+  span {
+    font-size: $fz14px;
+  }
+  p {
+    width: 13.5rem;
+    margin-bottom: 1.5rem;
+  }
+  img {
+    width: 20rem;
+    height: 10rem;
+    object-fit: contain;
+  }
+}
+
+@media (width < 1230px) {
+  .about {
+    justify-content: center;
+  }
+  .about__info {
+    margin-bottom: 5rem;
+  }
+  .card-flex {
+    margin-bottom: 5rem;
+  }
+}
+@media (width < 599px) {
+  .card-flex {
+    padding: 2rem 1.5rem;
+    border-radius: 0.5rem;
+    .block {
+      img {
+        height: 10rem;
+        width: 10rem;
+      }
+    }
+  }
+  .about__card {
+    max-width: 100%;
+  }
+  .card-flex_block {
+    column-gap: 0.5rem;
+    span {
+      width: 10rem;
+    }
+  }
+  .about {
+    &__info {
+      h1 {
+        font-size: 4rem;
+        line-height: 120%;
+      }
+    }
+  }
+}

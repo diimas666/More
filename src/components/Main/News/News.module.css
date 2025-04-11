@@ -1,0 +1,150 @@
+@charset "UTF-8";
+/* base.scss */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "HelveticaNeueCyr";
+  font-size: 1.6rem;
+}
+
+/* Применение шрифта ко всем элементам формы */
+input,
+textarea,
+select,
+button {
+  font-family: "HelveticaNeueCyr";
+  outline: none;
+  border: none;
+}
+
+textarea {
+  resize: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  display: block;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  a:hover {
+    color: inherit; /* или отменяем эффект */
+  }
+}
+.news {
+  padding: 13rem 0;
+}
+
+.news-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10rem;
+}
+.news-header h2 {
+  font-size: 36px;
+  color: #333333;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 5%;
+}
+.news-header button {
+  color: #133d8d;
+  font-size: 1.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  transform: all 0.3s ease;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+.news-header button:hover {
+  opacity: 0.7;
+  background-color: #133d8d;
+  color: #fff;
+}
+.news-header button:active {
+  transform: scale(0.9);
+}
+
+.news-card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(29.6rem, 1fr));
+  gap: 2.4rem;
+}
+
+.news-wrapper {
+  position: relative;
+  padding: 2.5rem 3rem;
+  min-height: 34rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  transition: 0.3s ease;
+  box-shadow: 0.3rem 0.6rem 2.6rem 0rem rgba(0, 0, 0, 0.5);
+}
+.news-wrapper:hover {
+  transform: scale(1.1);
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 86, 245, 0.5);
+  z-index: 2;
+}
+.image-overlay:hover {
+  background-color: transparent;
+}
+
+.image-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.news-title-block {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+.news-title-block .title {
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 140%;
+}
+.news-title-block .descr {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.news-button {
+  position: relative;
+  z-index: 10;
+  background-color: red;
+  padding: 0.8rem 1.2rem;
+  font-size: 13px;
+  color: #fff;
+}

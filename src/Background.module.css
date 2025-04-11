@@ -1,0 +1,11 @@
+.background {
+  min-height: 90rem;
+  transition: background-image 0.8s ease-in-out;
+  background: url("./assets/img/ship-1.png") center/cover no-repeat;
+}
+
+.container {
+  max-width: 129.7rem;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+}

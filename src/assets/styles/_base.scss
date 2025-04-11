@@ -1,0 +1,43 @@
+/* base.scss */
+html {
+  font-size: 62.5%; // Устанавливаем базовый размер шрифта для удобства (1rem = 10px)
+}
+
+body {
+  font-family: "HelveticaNeueCyr";
+  font-size: 1.6rem;
+}
+
+/* Применение шрифта ко всем элементам формы */
+input,
+textarea,
+select,
+button {
+  // Применение шрифта к инпутам, кнопкам и текстовым областям
+  font-family: "HelveticaNeueCyr";
+  outline: none; // Убираем стандартный обвод элементов при фокусе (можно настроить на свой вкус)
+  border: none;
+}
+textarea {
+  resize: none; // Убираем возможность изменения размера текстового поля в некоторых браузерах
+}
+
+a {
+  text-decoration: none; // Убираем подчеркивание у ссылок
+  color: inherit; // Наследуем цвет от родительского элемента
+}
+ul {
+  list-style: none;
+}
+button {
+  display: block;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  a:hover {
+    color: inherit; /* или отменяем эффект */
+  }
+}
