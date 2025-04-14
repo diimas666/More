@@ -2,7 +2,17 @@ import Button from '../About/Button';
 import style from './shipGallery.module.scss';
 import { IoClose } from 'react-icons/io5';
 
-const Modal = ({ setModalVisible, modalVisible }) => {
+const Modal = ({
+  setModalVisible,
+  modalVisible,
+  img,
+  setImg,
+  descr,
+  setDescr,
+  title,
+  setTitle,
+  addCardHandler
+}) => {
   return (
     <>
       <div
@@ -19,21 +29,40 @@ const Modal = ({ setModalVisible, modalVisible }) => {
         <div className={style.modal__block}>
           <div className={style.modal__wrap}>
             <span>Изображение</span>
-            <input type="url" placeholder="https://" />
+            <input
+              value={img}
+              onChange={(e) => setImg(e.target.value)}
+              type="url"
+              placeholder="https://"
+            />
           </div>
           <div className={style.modal__wrap}>
             <span>Описание</span>
-            <input type="text" placeholder="Описание" />
+            <input
+              value={descr}
+              onChange={(e) => setDescr(e.target.value)}
+              type="text"
+              placeholder="Описание"
+            />
           </div>
           <div className={style.modal__wrap}>
             <span>Заголовок</span>
-            <input type="text" placeholder="Заголовок" />
+            <input
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              type="text"
+              placeholder="Заголовок"
+            />
           </div>
         </div>
         <div className={style.buttons}>
-          <Button className={style.buttons__btn1}>Добавить карточку</Button>
-          <Button onClick={() => setModalVisible(false)} className={style.buttons__btn2}>Отмена</Button>
-          <Button className={style.buttons__btn3}>Случайная карточка</Button>
+          <Button onClick={addCardHandler} className={style.buttons__btn1}>Добавить карточку</Button>
+          <Button
+            onClick={() => setModalVisible(false)}
+            className={style.buttons__btn2}
+          >
+            Отмена
+          </Button>
         </div>
       </div>
     </>

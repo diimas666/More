@@ -12,11 +12,51 @@ import { historyShip } from './components/Main/History/history.js';
 import { useState } from 'react';
 import GalleryCard from './components/Main/Ship-gallery/GalleryCard.jsx';
 import { galleryArr } from './components/Main/Ship-gallery/galleryArr.js';
+import { v4 as randomId } from 'uuid';
 
 export const App = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  // modal 
+  // modal
   const [modalVisible, setModalVisible] = useState(false);
+  // card
+  const displayVisibleCard = galleryArr.slice(0, 4);
+  const [cardVisible, setCardVisible] = useState(displayVisibleCard);
+  const handleVisibleCard = (arr) => setCardVisible(arr);
+  const [arr, setArr] = useState(galleryArr);
+
+  // INPUT
+  const [img, setImg] = useState('');
+  const [descr, setDescr] = useState('');
+  const [title, setTitle] = useState('');
+  const date = new Date().toLocaleDateString('RU-ru', {
+    month: 'long',
+    year: 'numeric',
+    day: 'numeric',
+  });
+  // функция добавления карточки
+  const addCardHandler = () => {
+    if (img && descr && title) {
+      const newObject = {
+        image: img,
+        description: descr,
+        title,
+        id: randomId(),
+        date,
+      };
+      const updateObject = setArr((prev) => [...prev, newObject]);
+      setImg('');
+      setDescr('');
+      setTitle('');
+      setModalVisible(false);
+      return updateObject;
+    } else {
+      alert('Пусто..');
+    }
+    
+  };
+
+ 
+
   const handleSlideChange = (newIndex) => {
     setCurrentIndex(newIndex);
   };
@@ -42,8 +82,23 @@ export const App = () => {
         </Container>
       </Wrapper>
       <Container>
-        <GalleryHeader modalVisible={modalVisible} setModalVisible={setModalVisible} />
-        <GalleryCard cardArray={galleryArr} />
+        <GalleryHeader
+          modalVisible={modalVisible}
+          setModalVisible={setModalVisible}
+          displayVisibleCard={displayVisibleCard}
+          cardVisible={cardVisible}
+          handleVisibleCard={handleVisibleCard}
+          arr={arr}
+          img={img}
+          setImg={setImg}
+          descr={descr}
+          setDescr={setDescr}
+          title={title}
+          setTitle={setTitle}
+          addCardHandler={addCardHandler}
+          // date={date}
+        />
+        <GalleryCard cardArray={cardVisible} />
       </Container>
     </>
   );

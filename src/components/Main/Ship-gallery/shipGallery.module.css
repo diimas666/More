@@ -247,3 +247,29 @@ button {
   background-color: #333;
   color: #fff;
 }
+
+@media (width < 860px) {
+  .galleryHeader {
+    padding: 5rem 0 0 0;
+    flex-direction: column;
+    row-gap: 20px;
+    margin-bottom: 30px;
+  }
+  .modal {
+    width: 90%;
+  }
+  .modal h2 {
+    font-size: 17px;
+    margin-bottom: 15px;
+  }
+  .modal__wrap span {
+    width: 60px;
+  }
+  .modal .buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .modal .buttons button {
+    width: 100%;
+  }
+}
