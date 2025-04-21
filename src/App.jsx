@@ -9,11 +9,13 @@ import Wrapper from './components/Main/History/Wrapper.jsx';
 import GalleryHeader from './components/Main/Ship-gallery/GalleryHeader.jsx';
 import Company from './components/Main/History/Company.jsx';
 import { historyShip } from './components/Main/History/history.js';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import GalleryCard from './components/Main/Ship-gallery/GalleryCard.jsx';
 import { galleryArr } from './components/Main/Ship-gallery/galleryArr.js';
 import { v4 as randomId } from 'uuid';
-
+import ProjectWrapper from './components/Main/Slider-project/ProjectWrapper.jsx';
+import HeaderProject from './components/Main/Slider-project/HeaderProject.jsx';
+import ProjectSlider from './components/Main/Slider-project/ProjectSlider.jsx';
 export const App = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   // modal
@@ -64,6 +66,8 @@ export const App = () => {
     prev: ['prev'],
     next: ['next'],
   };
+
+  const swiperRef = useRef(null);
   return (
     <>
       <Background currentIndex={currentIndex}>
@@ -100,6 +104,12 @@ export const App = () => {
         />
         <GalleryCard cardArray={cardVisible} />
       </Container>
+      <ProjectWrapper>
+        <Container>
+          <HeaderProject swiperRef={swiperRef} />
+          <ProjectSlider swiperRef={swiperRef} />
+        </Container>
+      </ProjectWrapper>
     </>
   );
 };

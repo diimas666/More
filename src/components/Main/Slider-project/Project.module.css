@@ -1,0 +1,234 @@
+@charset "UTF-8";
+/* base.scss */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "HelveticaNeueCyr";
+  font-size: 1.6rem;
+}
+
+/* Применение шрифта ко всем элементам формы */
+input,
+textarea,
+select,
+button {
+  font-family: "HelveticaNeueCyr";
+  outline: none;
+  border: none;
+}
+
+textarea {
+  resize: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  display: block;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  a:hover {
+    color: inherit; /* или отменяем эффект */
+  }
+}
+.project__wrapper {
+  background-color: rgba(19, 61, 141, 0.5);
+  padding: 120px 0 120px 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 80px;
+}
+.header h2 {
+  font-size: 36px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.header__block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  -moz-column-gap: 4rem;
+       column-gap: 4rem;
+}
+.header__block p {
+  font-size: 18px;
+  color: #fff;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.header__buttons {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 15px;
+       column-gap: 15px;
+}
+.header__buttons button {
+  width: 60px;
+  height: 60px;
+  color: #fff;
+  cursor: pointer;
+  background-color: #133d8d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  transition: all 0.3s ease;
+}
+.header__buttons button:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.wrapper .images {
+  padding: 45px 20px;
+  min-height: 600px;
+  display: flex;
+  align-items: flex-end;
+}
+.wrapper .images__info {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.wrapper .images__info h2 {
+  font-size: 20px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.wrapper .images__info h3 {
+  font-size: 14px;
+  color: #fff;
+  font-weight: 400;
+}
+.wrapper .content {
+  background-color: #133d8d;
+  color: #fff;
+  padding: 55px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.wrapper .content__btn {
+  padding: 15px 30px;
+  background-color: transparent;
+  text-transform: uppercase;
+  color: #fff;
+  border: 2px solid #fff;
+}
+.wrapper .content__btn:hover {
+  border-right-color: transparent;
+  border-left-color: transparent;
+}
+.wrapper .content__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 50px 30px;
+}
+.wrapper .content__card {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+}
+.wrapper .content__card p {
+  font-size: 14px;
+  text-align: left;
+  line-height: 2rem;
+}
+.wrapper .content__block {
+  display: flex;
+  align-items: flex-end;
+  -moz-column-gap: 15px;
+       column-gap: 15px;
+}
+.wrapper .content__block b {
+  font-size: 35px;
+}
+.wrapper .content__block span {
+  font-size: 15px;
+}
+.wrapper .content__title {
+  line-height: 1.2;
+}
+
+.slider {
+  width: 100%;
+  overflow: hidden;
+}
+
+@media (width <= 920px) {
+  .project__wrapper {
+    padding: 30px 0;
+  }
+  .slider {
+    padding: 0;
+  }
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+  .wrapper .images {
+    min-height: 340px;
+  }
+  .wrapper .images h2 {
+    font-size: 14px;
+  }
+  .content__grid {
+    margin-bottom: 25px;
+  }
+}
+@media (max-width: 636px) {
+  .header {
+    flex-direction: column;
+    row-gap: 20px;
+    align-items: self-start;
+  }
+  .header__block {
+    width: 100%;
+  }
+  .content {
+    padding: 35px 30px;
+  }
+  .content__grid {
+    grid-template-columns: 1fr !important;
+    gap: 15px 0;
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
+  .content__card {
+    border: 1px solid #fff;
+    width: 100%;
+    padding: 10px;
+    align-items: center;
+  }
+  .content__btn {
+    width: 65%;
+    margin: 0 auto;
+  }
+  .content__title {
+    margin: 15px 12px;
+  }
+}
