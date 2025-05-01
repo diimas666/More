@@ -1,0 +1,227 @@
+@use "../../../assets/styles/variables" as *;
+@use "../../../assets/styles/mixin" as *;
+
+.wrapper {
+  min-height: 79.8rem;
+  padding: 12rem 0 5rem 0;
+  background-color: $color-blue;
+}
+.company {
+  @include flex-box;
+  column-gap: 12rem;
+  flex-wrap: wrap;
+  &__history {
+    h2 {
+      color: $color-white;
+      font-size: 3.6rem;
+      margin-bottom: 2rem;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+  }
+  &__info {
+    h3 {
+      color: $color-white;
+      margin-bottom: 2rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 3rem;
+    }
+    p {
+      max-width: 52.6rem;
+      color: $color-white;
+      font-size: $fz14px;
+      line-height: 3rem;
+      height: 50rem;
+      overflow: hidden;
+      text-align: justify;
+    }
+  }
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+  }
+  &__images {
+    position: relative;
+    max-width: 100%;
+    margin-bottom: 7rem;
+    button {
+      position: relative;
+      @include flex-box;
+      justify-content: center;
+      width: 3rem;
+      height: 3rem;
+      border: 0.2rem solid transparent;
+      cursor: pointer;
+      span {
+        display: block;
+        width: 1rem;
+        height: 1rem;
+        background-color: $color-white;
+      }
+      &::after {
+        position: absolute;
+        font-size: 2.4rem;
+        color: $color-white;
+      }
+    }
+    .btn1 {
+      position: absolute;
+      bottom: -16px;
+      left: -14px;
+      &::after {
+        content: "2021";
+        left: 4rem;
+        top: 0rem;
+      }
+    }
+    .btn2 {
+      position: absolute;
+      bottom: 82px;
+      left: 113px;
+      &::after {
+        content: "2022";
+        left: -1.5rem;
+        top: -4rem;
+      }
+    }
+    .btn3 {
+      position: absolute;
+      bottom: 112px;
+      left: 280px;
+      &::after {
+        content: "2023";
+        left: -1rem;
+        top: 4rem;
+      }
+    }
+    .btn4 {
+      position: absolute;
+      bottom: 229px;
+      left: 332px;
+      &::after {
+        content: "2024";
+        left: -6rem;
+        top: 0.5rem;
+      }
+    }
+    .btn5 {
+      position: absolute;
+      bottom: 274px;
+      left: 464px;
+      &::after {
+        content: "2025";
+        left: -1rem;
+        top: 3.5rem;
+      }
+    }
+    .btn6 {
+      position: absolute;
+      top: -19px;
+      right: -13px;
+      &::after {
+        content: "2026";
+        left: -7rem;
+        top: 0rem;
+      }
+    }
+    .not-active {
+      background-color: $color-white;
+      span {
+        display: block;
+        background-color: $color-blue;
+      }
+    }
+    .active {
+      background-color: $button-color;
+      border-color: $color-white;
+    }
+  }
+}
+.info {
+  &__block {
+    @include flex-box;
+    column-gap: 2rem;
+    margin-bottom: 2rem;
+    input {
+      width: 2rem;
+      height: 2rem;
+    }
+    label {
+      font-size: $fz16px;
+      color: $color-white;
+    }
+  }
+}
+
+@media (width < 1278px) {
+  .company {
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 2rem;
+  }
+}
+@media (width < 740px) {
+  .company {
+    &__info {
+      width: 100%;
+      p {
+        max-width: 100%;
+        margin-bottom: 2rem;
+      }
+    }
+    &__history {
+      h2 {
+        font-size: 2.5rem;
+      }
+    }
+    &__images {
+      width: 37rem;
+      img {
+        width: 37rem;
+      }
+      button {
+        width: 2rem;
+        height: 2rem;
+        span {
+          width: 0.8rem;
+          height: 0.8rem;
+        }
+        &::after {
+          position: absolute;
+          font-size: 2rem;
+        }
+      }
+      .btn1 {
+        bottom: -11px;
+        left: -7px;
+      }
+      .btn2 {
+        bottom: 55px;
+        left: 99px;
+      }
+      .btn3 {
+        bottom: 96px;
+        left: 192px;
+      }
+      .btn4 {
+        bottom: 166px;
+        left: 243px;
+      }
+      .btn5 {
+        top: 38px;
+        left: 323px;
+      }
+      .btn6 {
+        top: -14px;
+        right: -7px;
+      }
+    }
+    .wrapper {
+      padding: 5rem 0;
+    }
+    .active {
+      border: 0.1rem solid $color-white;
+    }
+  }
+}

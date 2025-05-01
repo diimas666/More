@@ -1,0 +1,94 @@
+@use "../../../assets/styles/variables" as *;
+@use "../../../assets/styles/mixin" as *;
+
+.footer__wrapper {
+  background-color: $color-blue;
+  padding: 6rem 0;
+}
+.footer {
+  &__logo {
+    @include flex-box;
+    justify-content: center;
+    margin-bottom: 4rem;
+  }
+  &__block {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20.6rem, 1fr));
+    grid-gap: 2.4rem;
+  }
+  &__contact {
+    text-align: right;
+    color: $color-white;
+    &__one {
+      margin-bottom: 2.5rem;
+      font-size: $fz14px;
+      line-height: 2rem;
+    }
+    &__city {
+      font-size: $fz14px;
+      margin-bottom: 3rem;
+    }
+    a {
+      display: block;
+    }
+    &__tel {
+      font-size: $fz14px;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      &:hover {
+        color: $button-color;
+      }
+    }
+    &__mail {
+      font-size: $fz16px;
+      font-weight: 700;
+      text-transform: uppercase;
+      &:hover {
+        color: $button-color;
+      }
+    }
+  }
+}
+.wrapper {
+  color: $color-white;
+  h3 {
+    font-size: 3rem;
+    color: $color-white;
+    text-transform: capitalize;
+  }
+  button {
+    text-transform: uppercase;
+    font-size: $fz16px;
+    margin-bottom: 2.5rem;
+    font-weight: 600;
+    color: $color-white;
+    transition: all 0.1s ease-in;
+    &:hover {
+      color: $button-color;
+    }
+    &:active {
+      transform: translateY(0.5rem);
+    }
+  }
+  p {
+    margin-bottom: 1.5rem;
+    font-size: $fz14px;
+  }
+}
+
+@media (width < 500px) {
+  .footer__wrapper {
+    padding: 3rem 0;
+  }
+  .footer {
+    &__block {
+      grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    }
+    &__contact {
+      text-align: left;
+    }
+  }
+  .wrapper {
+    text-align: left;
+  }
+}

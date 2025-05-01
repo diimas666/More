@@ -14,8 +14,11 @@ import GalleryCard from './components/Main/Ship-gallery/GalleryCard.jsx';
 import { galleryArr } from './components/Main/Ship-gallery/galleryArr.js';
 import { v4 as randomId } from 'uuid';
 import ProjectWrapper from './components/Main/Slider-project/ProjectWrapper.jsx';
+import FlotSlider from './components/Main/Flot/FlotSlider.jsx';
 import HeaderProject from './components/Main/Slider-project/HeaderProject.jsx';
 import ProjectSlider from './components/Main/Slider-project/ProjectSlider.jsx';
+import { Footer } from './components/Main/Footer/Footer.jsx';
+import { FooterWrapper } from './components/Main/Footer/FooterWrapper.jsx';
 export const App = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   // modal
@@ -54,10 +57,7 @@ export const App = () => {
     } else {
       alert('Пусто..');
     }
-    
   };
-
- 
 
   const handleSlideChange = (newIndex) => {
     setCurrentIndex(newIndex);
@@ -110,6 +110,14 @@ export const App = () => {
           <ProjectSlider swiperRef={swiperRef} />
         </Container>
       </ProjectWrapper>
+      <Container>
+        <FlotSlider />
+      </Container>
+      <FooterWrapper>
+        <Container>
+          <Footer />
+        </Container>
+      </FooterWrapper>
     </>
   );
 };
